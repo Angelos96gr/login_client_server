@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+    <title>MunichDocs</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        .navbar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #0f3a5c;
+        }
+
+        li {
+        float: left;
+        }
+
+        li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        }
+
+
+        .web_body{
+            display: block;
+            text-align: center;
+            padding: 10px 10px;
+
+
+        }
+
+        form {
+            text-align: center;
+            display: block;
+            position: fixed;
+            top: 50%;
+            left: 45%;
+
+        }
+        form input{
+            width: auto;
+            margin-bottom: 0.5em
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+        <ul class="navbar">
+            <li><a class= "navbar_items" href="home">Home</a></li> 
+            <li><a class= "navbar_items" href="phonebook">Find doctors nearby</a></li> 
+            <li style="float:right"><a class= "navbar_items" href="about">About</a></li>
+        </ul>
+        </div>
+    {% block body %}
+    {% endblock %}
+</body>
+
+
+</html>

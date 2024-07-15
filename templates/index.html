@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+
+
+{% block body %}
+
+
+
+<h1 class="web_body">Welcome to MunichDocs</h1>
+
+
+<form>
+    <input type="text" class= "form-control" name = "email" placeholder="Enter your email" pattern="^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-z]+$" title = "Please enter a valid email address" required>
+    <input type="password" class= "form-control" name = "password" placeholder="Enter your password" pattern="^[a-zA-Z0-9!]{3,12}$" title = "Please enter a password with length between 3 and 12 characters" required>
+    <input  type="button" name = "login" value="Login"><br>
+    <a href="signup" type="button">Signup</a>
+</form>
+
+
+
+{% endblock %}

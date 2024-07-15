@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+
+
+{% block body %}
+
+
+<div>This is a list of all the docs</div>
+
+<ul>
+{%  for doctor in doctors_list %}
+<li>{{doctor["full_name"]}}, {{doctor["address"]}}, {{doctor["specialization"]}}</li><br>
+{% endfor %}
+</ul>
+
+
+{% endblock %}
