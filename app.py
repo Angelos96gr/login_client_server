@@ -4,17 +4,6 @@ from db_utils import *
 import random, hashlib
 
 
-"""
-specializations = ["Cardiology", "Neuropathy", "Pneumologist"]
-simulated_doc_list = [
-    {"name": "Dr. Tobias", "address": "Hauzenberger strasse 20", "specialization":specializations[0]},
-    {"name": "Dr. Landgrebe", "address": "Laimer Platz 48", "specialization":specializations[2]},
-    {"name": "Dr. Poulopoulos", "address": "Griechische strasse 32", "specialization":specializations[1]},
-    {"name": "Dr. Jacobsen", "address": "Herzog Heinrich strasse 3", "specialization":specializations[0]},
-]
-"""
-
-
 app = Flask(__name__)  # defines app.py as a Flask application
 app.config["SESSION_TYPE"] = "filesystem"
 app.config["SESSION_PERMANENT"] = False
