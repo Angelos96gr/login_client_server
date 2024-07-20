@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+<style>
+    div{
+        text-align: center;
+    }
+</style>
+
+<script>
+
+    document.getElementById("logged_credentials").innerText = "{{username}}"
+    document.getElementById("log_out").style.visibility = "visible"
+
+
+</script>
+
+
+
+<div>
+    <img src="{{ url_for('static', filename='images/cat1.jfif') }}" alt="chill cat">
+</div>
+
+<div>
+You are logged in
+</div>
+
+
+{% endblock %}

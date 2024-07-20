@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+<style>
+    div {
+        text-align: center;
+    }
+</style>
+
+<div>
+
+    The {{action}} has been {{result}}!
+    {% if result != "succesfull" %}
+    {% if action == "login" %}
+    <br>The username and password did not seem to work :/
+    <br><br>
+    <a href="signup" type="button">Continue to signup</button>
+        <br><br>
+        <a href="../home" type="button">Try again</button>
+            {% endif %}
+            {% if action == "registration" %}
+            <br>The username already exists
+            <br><br>
+            <a href="../home" type="button">Continue to login</button>
+                {% endif %}
+                <div>
+
+                </div>
+
+                {% endif %}
+</div>
+
+
+{% endblock %}
