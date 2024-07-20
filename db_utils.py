@@ -28,14 +28,14 @@ def get_data_from_db(db_name, db_table):
     return res
 
 
-def register_new_user(user_name, pwd):
+def register_new_user(username, pwd):
     
     try:
         con = sqlite3.connect(f"{PROJECT_PATH}\\{db_users.database_name}")
         cur = con.cursor()
         sql_command = f"INSERT INTO {db_users.database_tables} ({db_users.database_cols[0]},{db_users.database_cols[1]}) VALUES (?,?)"
-        print(f"Adding new user: {user_name} to database") # allows duplicated rows because only primary key needs to be unique
-        cur.execute(sql_command, (user_name, pwd))
+        print(f"Adding new user: {username} to database") # allows duplicated rows because only primary key needs to be unique
+        cur.execute(sql_command, (username, pwd))
         con.commit()
         con.close()
         return True
@@ -62,8 +62,15 @@ def convert_tuples_dict(res):
     
     return(list_dict)
 
-def login_user(user_name, pwd):
-    pass #todo - check the user exists and the pwd, email are correct
+def check_user_exists(username, pwd):
+
+    db_entries = convert_tuples_dict(get_data_from_db("users.db", "user"))
+    for db_entry in db_entries:
+        if ((db_entry["user_name"] == username) and (db_entry["pwd"] == pwd)):
+            print(f"User {username} already exists")
+            return True
+    print(f"User {username} does not exist in the database")
+    return False
 
 def get_dbs() -> list:
 

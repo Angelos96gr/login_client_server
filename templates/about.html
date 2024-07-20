@@ -4,6 +4,17 @@
 
 {% block body %}
 
+
+{% if logged_in %}
+<script>
+    document.getElementById("logged_credentials").innerText = "{{username}}"
+    document.getElementById("log_out").style.visibility = "visible"
+
+</script>
+
+{% endif %}
+
+
 <br><div>This page has been developed by Angie the great and provides functionality for finding doctors in the area of Munich.</div>
 
 

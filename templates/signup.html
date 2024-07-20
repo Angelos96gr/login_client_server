@@ -9,11 +9,14 @@
 <h3></h3>
 <script src="{{url_for('static', filename='utils.js')}}"></script>
 
-<form action="/signup" method="post">
-    <input type="text" name = "username" class= "form-control" placeholder="Enter your user name" pattern="^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-z]+$" title = "Please enter a valid email address" required >
-    <input type="password" name = "pwd" class= "form-control" placeholder="Enter your password" pattern="^[a-zA-Z0-9!]{3,12}$" title = "Please enter a password with length between 3 and 12 characters" required>
-    <input type="password" name = "pwd_repeat" class= "form-control" placeholder="Re-enter your password" required>
-    <button name = "signup" type="submit">Signup</button>
+<form id="signup_form" action="/signup" method="post">
+    <input type="text" name="username" class="form-control" autocomplete="off" placeholder="Enter your user name"
+        pattern="^[a-zA-Z0-9_]+@[a-zA-Z]+\.[a-z]+$" title="Please enter a valid email address e.g., john@gmail.com" required>
+    <input type="password" name="pwd" class="form-control" placeholder="Enter your password"
+        pattern="^[a-zA-Z0-9!]{3,12}$" title="Please enter a password with length between 3 and 12 characters" required>
+    <input type="password" name="pwd_repeat" class="form-control" placeholder="Re-enter your password" required>
+    <div id="incorrect_pwd" style="color: rgb(201, 128, 128);"></div>
+    <button name="signup" type="submit">Signup</button>
 
     <message></message>
 </form>

@@ -6,48 +6,63 @@
 <head>
     <title>MunichDocs</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
     <style>
         .navbar {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #0f3a5c;
+            display: flex;
+            background-color: #5f859b;
         }
 
-        li {
-        float: left;
-        }
-
-        li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
+        .navbar_items {
+            color: rgb(251, 252, 252);
+            font-size: 18px;
+            padding: 10px 10px;
         }
 
 
-        .web_body{
+        .web_body {
             display: block;
             text-align: center;
             padding: 10px 10px;
 
-
         }
 
         form {
+            width: 30%;
+            margin: auto;
+            padding: 120px 40px;
             text-align: center;
-            display: block;
-            position: fixed;
-            top: 50%;
-            left: 45%;
 
         }
-        form input{
+
+        .navbar_items a {
+            color: white;
+
+        }
+
+        .navbar_fixed {
+            display: flex;
+            text-align: left;
+            align-items: center;
+
+        }
+
+        .navbar_login {
+            display: flex;
+            margin-left: auto;
+            align-items: center;
+
+        }
+
+        .navbar_items a:hover {
+            text-decoration: none;
+            color: white;
+        }
+
+        form input {
             width: auto;
             margin-bottom: 0.5em
         }
-
     </style>
 
 </head>
@@ -55,12 +70,23 @@
 <body>
 
     <div class="navbar">
-        <ul class="navbar">
-            <li><a class= "navbar_items" href="home">Home</a></li> 
-            <li><a class= "navbar_items" href="phonebook">Find doctors nearby</a></li> 
-            <li style="float:right"><a class= "navbar_items" href="about">About</a></li>
-        </ul>
+        <div class="navbar_fixed">
+            <div class=navbar_items><a href="home">Home</a></div>
+            <div class=navbar_items><a href="phonebook">Find doctors nearby</a></div>
+            <div class=navbar_items><a href="about">About</a></div>
         </div>
+        <div>
+
+        </div>
+        <div class="navbar_login">
+
+            <div class=navbar_items id="logged_credentials"></div>
+            <div class=navbar_items style="visibility: hidden; font-size: 14px;" id="log_out"><a href="logout">Logout</a></div>
+
+        </div>
+
+
+    </div>
     {% block body %}
     {% endblock %}
 </body>

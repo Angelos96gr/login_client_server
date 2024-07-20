@@ -5,13 +5,31 @@
 {% block body %}
 
 
-<div>This is a list of all the docs</div>
 
+
+
+{% if logged_in == True %}
+<script>
+    document.getElementById("logged_credentials").innerText = "{{username}}"
+    document.getElementById("log_out").style.visibility = "visible"
+
+</script>
+
+{% endif %}
+<div>
+    
+    This is a list of all the docs
+<br>
+</div>
+
+
+<div>
 <ul>
-{%  for doctor in doctors_list %}
-<li>{{doctor["full_name"]}}, {{doctor["address"]}}, {{doctor["specialization"]}}</li><br>
-{% endfor %}
+    {% for doctor in doctors_list %}
+    <li>{{doctor["full_name"]}}, {{doctor["address"]}}, {{doctor["specialization"]}}</li><br>
+    {% endfor %}
 </ul>
+</div>
 
 
 {% endblock %}
