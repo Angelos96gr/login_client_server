@@ -15,7 +15,7 @@
 
         .navbar_items {
             color: rgb(251, 252, 252);
-            font-size: 18px;
+            font-size: 17px;
             padding: 10px 10px;
         }
 
@@ -71,6 +71,7 @@
 
     <div class="navbar">
         <div class="navbar_fixed">
+            <img class="navbar_items" src="{{ url_for('static', filename='images/logo.png') }}" width="50px" style="padding: 0px 0px;">
             <div class=navbar_items><a href="home">Home</a></div>
             <div class=navbar_items><a href="phonebook">Find doctors nearby</a></div>
             <div class=navbar_items><a href="about">About</a></div>

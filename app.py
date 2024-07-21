@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, session, make_response, url_for
 from flask_session import Session
 from db_utils import *
-import random, hashlib
+import hashlib
 
 
 app = Flask(__name__)  # defines app.py as a Flask application
@@ -55,7 +55,9 @@ def login():
 
         if check_user_exists(session.get("username"), session.get("pwd")):
             resp = make_response(render_template("logged_in.html", username=session.get("username")))
-            cookie_value = hashlib.sha256(session["username"].encode('utf-8')).hexdigest() # setting up cookie for tracking which users have logged in
+            
+            # setting up cookie for tracking which users have logged in
+            cookie_value = hashlib.sha256(session["username"].encode('utf-8')).hexdigest() 
             resp.set_cookie(f"session_custom_{session.get("username").split("@")[0]}", cookie_value) 
             return resp
         else:
@@ -64,6 +66,7 @@ def login():
                 "sign_in_up_result.html", action="login", result="unsucessful"
 
             )
+
 
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -93,3 +96,23 @@ def signup():
 def logout():
     session.clear()
     return redirect("/")
+
+@app.route("/delete")
+def delete():
+    print(f"Deleting user {session.get("username")}")
+    delete_user(session.get("username"), session.get("pwd"))
+    session.clear()
+    return redirect("/")
+
+
+@app.route("/book_appointment")
+def book():
+    #ToDo to suppot booking apppointments with one of the registered users
+    return redirect("/phonebook")
+
+@app.route("/register_doc")
+def register_doc():
+    logged_in = False
+    if  (session.get("username") is not None): # user is still logged in
+        logged_in = True
+    return render_template("register_doc.html", logged_in = logged_in)

@@ -4,9 +4,11 @@
 {% block body %}
 
 <style>
-    div{
+    div {
         text-align: center;
     }
+
+
 </style>
 
 <script>
@@ -17,14 +19,24 @@
 
 </script>
 
-
-
 <div>
-    <img src="{{ url_for('static', filename='images/cat1.jfif') }}" alt="chill cat">
+    You are logged in as {{session.get("username")}}
 </div>
 
-<div>
-You are logged in
+<div class="lopin_options">
+    <div>
+        <a href="/book_appointment">Book an appointment</a>
+    </div>
+    <div>
+
+        <a href="/register_doc">Register as a doctor</a>
+    </div>
+    <div>
+
+        <a href="/delete">Delete user</a>
+    </div>
+
+
 </div>
 
 

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+
+
+{% block body %}
+{% extends "layout.html" %}
+
+
+
+{% block body %}
+
+
+{% if logged_in %}
+<script>
+    document.getElementById("logged_credentials").innerText = "{{username}}"
+    document.getElementById("log_out").style.visibility = "visible"
+
+</script>
+
+
+
+
+{% endblock %}
