@@ -8,5 +8,6 @@ jobs:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "$PWD"
       - run: pip3 install black
-      - run: black .
-      - run: mypy .
+      - run: pip3 install mypy
+      - run: black app.py
+      - run: mypy app.py
