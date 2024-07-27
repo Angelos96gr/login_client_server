@@ -9,5 +9,6 @@ jobs:
       - run: echo "$PWD"
       - run: pip3 install black
       - run: pip3 install mypy
-      - run: black \app.py
-      - run: mypy app.py
+      - run: cd ..
+      - run: black login_client_server/
+      - run: mypy login_client_server/
