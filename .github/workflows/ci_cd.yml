@@ -9,6 +9,5 @@ jobs:
       - run: echo "$PWD"
       - run: pip3 install black
       - run: pip3 install mypy
-      - run: cd ..
-      - run: black login_client_server/*
-      - run: mypy login_client_server/*
+      - uses: actions/checkout@v3
+      - uses: psf/black@stable
