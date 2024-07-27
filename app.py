@@ -78,7 +78,7 @@ def login():
                 session["username"].encode("utf-8")
             ).hexdigest()
             resp.set_cookie(
-                f"session_custom_{session.get("username").split("@")[0]}", cookie_value
+                f'session_custom_{session.get("username").split("@")[0]}', cookie_value
             )
             return resp
         else:
@@ -119,7 +119,7 @@ def logout():
 
 @app.route("/delete")
 def delete():
-    print(f"Deleting user {session.get("username")}")
+    print(f'Deleting user {session.get("username")}')
     delete_user(session.get("username"), session.get("pwd"))
     session.clear()
     return redirect("/")
