@@ -4,8 +4,9 @@
 
 
 <head>
-    <title>MunichDocs</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>MucDocs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href = "https://cdn.datatables.net/2.1.2/css/dataTables.bootstrap4.css">
 
     <style>
         .navbar {
@@ -59,10 +60,21 @@
             color: white;
         }
 
-        form input {
+        form input, form select{
             width: auto;
             margin-bottom: 0.5em
         }
+
+        div {
+        text-align: center;
+        padding: 10px;
+        }
+
+        div a{
+            padding: 2px
+        }
+    
+
     </style>
 
 </head>
@@ -73,7 +85,7 @@
         <div class="navbar_fixed">
             <img class="navbar_items" src="{{ url_for('static', filename='images/logo.png') }}" width="50px" style="padding: 0px 0px;">
             <div class=navbar_items><a href="home">Home</a></div>
-            <div class=navbar_items><a href="phonebook">Find doctors nearby</a></div>
+            <div class=navbar_items><a href="phonebook">Doctors nearby</a></div>
             <div class=navbar_items><a href="about">About</a></div>
         </div>
         <div>
@@ -81,8 +93,8 @@
         </div>
         <div class="navbar_login">
 
-            <div class=navbar_items id="logged_credentials"></div>
-            <div class=navbar_items style="visibility: hidden; font-size: 14px;" id="log_out"><a href="logout">Logout</a></div>
+            <div class=navbar_items id="logged_credentials" style="font-size: 14px;"></div>
+            <div class=navbar_items style="visibility: hidden;" id="log_out"><a href="logout">Logout</a></div>
 
         </div>
 

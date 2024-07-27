@@ -6,16 +6,17 @@
 
 
 
-<h1 class="web_body">Welcome to MunichDocs</h1>
+<h1 class="web_body">Welcome to MucDocs</h1>
 
 
 <form action="/login" method="post">
+    
     <input type="text" class="form-control" name="username" autocomplete= "off" placeholder="Enter your email"
         pattern="^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-z]+$" title="Please enter a valid email address" required>
     <input type="password" class="form-control" name="pwd" placeholder="Enter your password"
         pattern="^[a-zA-Z0-9!]{3,12}$" title="Please enter a password with length between 3 and 12 characters" required>
-    <input type="submit" name="login" value="Login"><br>
-    <a href="signup" type="button">Signup</a>
+    <button name="login" type="submit">Login</button><br>
+    <div><a href="signup" type="button">Signup</a></div>
 </form>
 
 

@@ -1,0 +1,11 @@
+name: Continuous Testing
+run-name: ${{github.actor}} is testing out this project
+on: [push]
+jobs:
+  Test:
+  runs-on: ubuntu-latest
+  steps:
+  - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+  - run: echo "Testing starting..."
+  - run: black .
+  - run: mypy .

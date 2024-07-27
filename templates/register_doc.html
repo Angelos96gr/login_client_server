@@ -3,20 +3,39 @@
 
 
 {% block body %}
-{% extends "layout.html" %}
-
-
-
-{% block body %}
-
 
 {% if logged_in %}
 <script>
-    document.getElementById("logged_credentials").innerText = "{{username}}"
+    document.getElementById("logged_credentials").innerText = '{{session.get("username")}}'
     document.getElementById("log_out").style.visibility = "visible"
 
 </script>
+{% endif %}
 
+
+
+<form action="/register_doc" , method="post">
+    <label>Register as a doctor</label>
+    <input type="text" name="first_name" class="form-control" autocomplete="off" placeholder="Enter your first name"
+        pattern="^[a-zA-Z]+$" title="The name can only contain characters" required>
+    <input type="text" name="last_name" class="form-control" autocomplete="off" placeholder="Enter your last name"
+        pattern="^[a-zA-Z]+$" title="The name can only contain characters" required>
+    <input type="text" name="address_street" class="form-control" autocomplete="off"
+        placeholder="Enter the street address of your practise" pattern="^[a-zA-Z]+( [a-zA-Z]+)? [0-9]+$"
+        title="The address must contain both name and number" required>
+    <input type="text" name="address_postal" class="form-control" autocomplete="off"
+        placeholder="Enter the postcode of your practise" pattern="^\d{5}$" title="The postal code must be 5 digits"
+        required>
+
+    <select class="form-control" name="specialization" required>
+        <option value="General Practisioner">General Practisioner</option>
+        <option value="Cardiologist">Cardiologist</option>
+        <option value="Orthopedist">Orthopedist</option>
+        <option value="Gastroenterologist">Gastroenterologist</option>
+
+    </select>
+    <button type="submit" name="register_doc">Register as doctor</button>
+</form>
 
 
 

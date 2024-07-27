@@ -12,24 +12,40 @@
 <script>
     document.getElementById("logged_credentials").innerText = "{{username}}"
     document.getElementById("log_out").style.visibility = "visible"
-
 </script>
 
 {% endif %}
-<div>
-    
-    This is a list of all the docs
-<br>
+
+
+
+
+
+
+
+<div style="text-align: center; padding: 20px;">
+    This is a list of all available doctors in the area.
 </div>
 
 
-<div>
-<ul>
+<table id="doc_table" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Specialization</th>
+        </tr>
+    </thead>
     {% for doctor in doctors_list %}
-    <li>{{doctor["full_name"]}}, {{doctor["address"]}}, {{doctor["specialization"]}}</li><br>
+
+    <tbody>
+        <tr>
+            {% for column in ["full_name", "address", "specialization" ]%}
+            <td>{{doctor[column]}}</td>
+            {% endfor %}
+    </tbody>
     {% endfor %}
-</ul>
-</div>
+</table>
+
 
 
 {% endblock %}
