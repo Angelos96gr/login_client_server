@@ -9,5 +9,5 @@ jobs:
       - run: echo "$PWD"
       - run: pip3 install black
       - run: pip3 install mypy
-      - run: black app.py
+      - run: black \app.py
       - run: mypy app.py
