@@ -10,5 +10,5 @@ jobs:
       - run: pip3 install black
       - run: pip3 install mypy
       - run: cd ..
-      - run: black login_client_server/
-      - run: mypy login_client_server/
+      - run: black login_client_server/*
+      - run: mypy login_client_server/*
