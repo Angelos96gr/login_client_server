@@ -7,7 +7,6 @@
 <h1 class="web_body">Welcome to MunichDocs</h1>
 
 <h3></h3>
-<script src="{{url_for('static', filename='utils.js')}}"></script>
 
 <form id="signup_form" action="/signup" method="post">
     <input type="text" name="username" class="form-control" autocomplete="off" placeholder="Enter your user name"
@@ -20,6 +19,9 @@
 
     <message></message>
 </form>
+
+<script src="{{url_for('static', filename='utils.js')}}"></script>
+
 
 
 {% endblock %}
