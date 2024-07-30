@@ -1,0 +1,64 @@
+.navbar {
+    display: flex;
+    background-color: #5f859b;
+}
+
+.navbar_items {
+    color: rgb(251, 252, 252);
+    font-size: 17px;
+    padding: 10px 10px;
+}
+
+
+.web_body {
+    display: block;
+    text-align: center;
+    padding: 10px 10px;
+
+}
+
+form {
+    width: 30%;
+    margin: auto;
+    padding: 120px 40px;
+    text-align: center;
+
+}
+
+.navbar_items a {
+    color: white;
+
+}
+
+.navbar_fixed {
+    display: flex;
+    text-align: left;
+    align-items: center;
+
+}
+
+.navbar_login {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+
+}
+
+.navbar_items a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+form input, form select{
+    width: auto;
+    margin-bottom: 0.5em
+}
+
+div {
+text-align: center;
+padding: 10px;
+}
+
+div a{
+    padding: 2px
+}
