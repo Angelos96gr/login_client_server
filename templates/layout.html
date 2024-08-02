@@ -7,7 +7,7 @@
     <title>MucDocs</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-    <link rel="stylesheet" href = "https://cdn.datatables.net/2.1.2/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.2/css/dataTables.bootstrap4.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='mucdocs.css') }}">
 
 </head>
@@ -16,7 +16,8 @@
 
     <div class="navbar">
         <div class="navbar_fixed">
-            <img class="navbar_items" src="{{ url_for('static', filename='images/logo.png') }}" width="50px" style="padding: 0px 0px;">
+            <img class="navbar_items" src="{{ url_for('static', filename='images/logo.png') }}" width="50px"
+                style="padding: 0px 0px;">
             <div class=navbar_items><a href="home">Home</a></div>
             <div class=navbar_items><a href="phonebook">Doctors nearby</a></div>
             <div class=navbar_items><a href="about">About</a></div>
@@ -25,14 +26,22 @@
 
         </div>
         <div class="navbar_login">
-
-            <div class=navbar_items id="logged_credentials" style="font-size: 14px;"></div>
-            <div class=navbar_items style="visibility: hidden;" id="log_out"><a href="logout">Logout</a></div>
-
+            <div class=navbar_items id="logged_credentials"></div>
+            <div class=navbar_items style="visibility: hidden;" id="log_out_button"><a href="logout">Logout</a></div>
         </div>
 
 
     </div>
+
+
+    {% if session.get('username') %}
+    <script>
+        console.log(`Username is: ${"{{session.get('username')}}"}`)
+        document.getElementById("logged_credentials").innerText = "{{session.get('username')}}"
+        document.getElementById("log_out_button").style.visibility = "visible"
+    </script>
+    {% endif %}
+
     {% block body %}
     {% endblock %}
 </body>

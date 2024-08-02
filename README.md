@@ -20,4 +20,4 @@ The structure of the repository is as follows:
 - db_utils.py provides general functionality to enable database interactions (e.g., creating/deleting users, support server-side authentication)
 - templates/ folder contains all the static html templates
 - static/ folder contains the Javascript-based functionality to check client-side input validation and the CSS styling
-- users.db is the sqite3 database including two tables: one for the users and one for doctors
+- users.db is the sqlite3 database including two tables: one for the users and one for doctors

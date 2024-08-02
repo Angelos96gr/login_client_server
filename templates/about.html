@@ -5,18 +5,25 @@
 {% block body %}
 
 
-{% if logged_in %}
-<script>
-    document.getElementById("logged_credentials").innerText = "{{username}}"
-    document.getElementById("log_out").style.visibility = "visible"
-
-</script>
-
-{% endif %}
 
 
-<br><div>This page has been developed by Angie the great(est) and provides functionality for registering as a user, finding doctors and booking apppointments in the area of Munich.
-    It has been thoroughly tested by independent testers including Niki Panousi!
+
+<div class = "about_box">
+   MucDocs is a platform for patients to find doctors in the area of Munich. Additionally, doctors can register their practise so that the patient can contact them to book appointments.
+
+
+    <br><br>The web app supports:
+    <ul>
+        
+        <li>Login/out of the webpage</li>
+        <li>Creating user accounts with credentials and passwords</li>
+        <li>All sensitive information such as passwords are stored hashed in the database</li>
+        <li>Registering the practise as a doctor</li>
+        <li>Accessing a list of registered doctors in the area</li>
+        
+    </ul>
+    
+    
 </div>
 
 

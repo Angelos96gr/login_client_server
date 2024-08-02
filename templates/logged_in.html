@@ -4,13 +4,6 @@
 {% block body %}
 
 
-<script>
-
-    document.getElementById("logged_credentials").innerText = "{{username}}"
-    document.getElementById("log_out").style.visibility = "visible"
-
-
-</script>
 
 <div>
     You are logged in as {{session.get("username")}}

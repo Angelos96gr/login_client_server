@@ -18,6 +18,9 @@
 }
 
 form {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
     width: 30%;
     margin: auto;
     padding: 120px 40px;
@@ -49,16 +52,17 @@ form {
     color: white;
 }
 
-form input, form select{
+form input,
+form select {
     width: auto;
     margin-bottom: 0.5em
 }
 
-div {
-text-align: center;
-padding: 10px;
+.about_box {
+    text-align: justify;
 }
 
-div a{
-    padding: 2px
+div {
+    text-align: center;
+    padding: 10px;
 }

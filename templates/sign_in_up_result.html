@@ -9,10 +9,6 @@
 <div>The {{action}} has been {{result}}!
     {% if result == "succesfull" %}
     <div><a href="../home" type="button">Go back to home screen</a></div>
-    <script>
-        document.getElementById("logged_credentials").innerText = '{{session.get("username")}}'
-        document.getElementById("log_out").style.visibility = "visible"
-    </script>
     {% elif result != "succesfull" and action == "login"%}
     <br>The username and password did not seem to work :/<br>
     </div>
